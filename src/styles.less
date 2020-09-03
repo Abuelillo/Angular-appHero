@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.main-container{
+    margin-top:20px
+}
+//espacio extra al final de la paguina
+.pie(@var :0px){
+    padding-bottom: @var;
+}
+
+body {
+    .pie(50px);
+}
+
+.fin{    
+    margin: 15px;
+    width: 90%;
+}
+
+.img-logo{
+    width: 120px;
+}
+
+//ANIMACION
+@import (css) "./assets/style/animate.css";

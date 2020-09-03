@@ -1,3 +1,12 @@
+## INFO APP
+
+buscador de heroes, uso enrutamientos,Input,Output,Router
+
+- COMANDOS
+- ng g c components/....
+- ng serve --port 4201
+- ng serve
+
 # Spa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
