@@ -1,5 +1,130 @@
-<h1 class="animate fadeIn fast">Sobre Comic App</h1>
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
 <hr/>
-<p class="animate fadeIn">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate enim laboriosam tenetur temporibus modi officia. Facilis voluptatum illo repellendus harum quaerat obcaecati fugit sapiente possimus quo debitis reiciendis, odio unde?
-</p>
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Variable</th>
+                    <th>Pipe</th>
+                    <th>Varibale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>uppercase</td>
+                    <td>{{nombre | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>lowercase</td>
+                    <td>{{nombre | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>capitalizado:{{cap}}<br>
+                        <button (click)="cap=!cap" class="mr-1 btn btn-primary">Activar/Desactivar</button></td>
+                    <td>{{nombre | capitalizado:cap}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>slice:2:8</td>
+                    <td>{{nombre | slice:2:8}}</td>
+                </tr>
+                <tr>
+                    <td>{{arraid}}</td>
+                    <td>slice:1:6</td>
+                    <td>{{arraid | slice:1:6}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'1.0-0'</td>
+                    <td>{{PI | number:'1.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'.0-2'</td>
+                    <td>{{PI | number:'.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>percentaje</td>
+                    <td>{{porcentaje | percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>percent:'2.2-2'</td>
+                    <td>{{porcentaje | percent:'2.2-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency</td>
+                    <td>{{salario | currency}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency:'EUR':'symbol-narrow':'.0-0'</td>
+                    <td>{{salario | currency:'EUR':'symbol-narrow':'.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{valorPromesa}}</td>
+                    <td>asycn</td>
+                    <td>{{valorPromesa | async}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'dd - MMMM - yyyy' (set idioma app.module.ts)</td>
+                    <td>{{fecha | date:'dd - MMMM - yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'MMMM - dd':'':'{{idioma}}' (set idioma app.module.ts)
+                        <br>
+                        <button (click)="idioma='es'" class="mr-1 btn btn-primary">Español</button>
+                        <button (click)="idioma='en'" class="mr-1 btn btn-secondary">Ingles</button>
+                        <button (click)="idioma='fa'" class="mr-1 btn btn-success">Persa</button>
+                    </td>
+                    <td>{{fecha | date:'MMMM - dd':'':idioma}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>constraseña:{{activar}}
+                        <br/>
+                        <button (click)="activar=!activar" class="mr-1 btn btn-success">Activar/Desactivar</button>
+                    </td>
+                    <td>{{nombre | contrasena:activar}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <h4>Slice -> ngFor="let i of arraid | slice:6:20 </h4>
+        <hr/>
+        <ul class="list-group">
+            <li *ngFor="let i of arraid | slice:6:20" class="list-group-item">{{i}}</li>
+        </ul>
+        <br/>
+        <h3>JSON -> datoJson | json</h3>
+        <hr/>
+        <div class="row mb-5">
+            <div class="col">
+                <pre>
+                {{heroe | json}}
+                </pre>
+            </div>
+        </div>
+        <br/>
+        <h3>DOM Seguro</h3>
+        <hr/>
+        <div class="row mb-5">
+            <div class="col">
+                <iframe width="560" height="315" [src]="videoUrl | domseguro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

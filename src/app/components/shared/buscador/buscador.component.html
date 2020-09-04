@@ -23,5 +23,5 @@
             <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block fin">Ver mas..</a>
         </div>
     </div>-->
-    <app-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="h" [index]="h.id" *ngFor="let h of heroes; let i = index"></app-tarjeta>
+    <app-tarjeta <!--(heroeSeleccionado)="verHeroe($event)" -->[heroe]="h" [index]="h.id" *ngFor="let h of heroes; let i = index"></app-tarjeta>
 </div>

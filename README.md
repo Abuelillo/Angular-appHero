@@ -6,7 +6,15 @@ buscador de heroes, uso enrutamientos,Input,Output,Router
 - ng g c components/....
 - ng serve --port 4201
 - ng serve
+- ng add @angular/localize
+- ng g p pipes/...
 
+- WEB INFO
+- https://angular.io/
+- https://stackblitz.com/edit/angular-ivy-msjhwk?file=src%2Fapp%2Fapp.component.html    -> codigos preparados
+- https://plnkr.co/       -> codigos preparados
+- https://getbootstrap.com/
+- https://ionicframework.com/docs/intro/cli
 # Spa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.

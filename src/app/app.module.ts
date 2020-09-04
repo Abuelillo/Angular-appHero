@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { LOCALE_ID} from '@angular/core'; //set idioma
+import { registerLocaleData } from '@angular/common';//set idioma
+import localEs from '@angular/common/locales/es';//set idioma
+import localFa from '@angular/common/locales/fa';//set idioma
+import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { ContrasenaPipe } from './pipes/contrasena.pipe';
+registerLocaleData(localEs);//set idioma
+registerLocaleData(localFa);//set idioma
 //Rutas
 import { APP_ROUTING } from './app.routes';
 
@@ -27,7 +36,10 @@ import { TarjetaComponent } from './components/heroes/heroe/tarjeta/tarjeta.comp
     HeroesComponent,
     HeroeComponent,
     BuscadorComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    CapitalizadoPipe,
+    DomseguroPipe,
+    ContrasenaPipe
   ],
   imports: [
     BrowserModule,
@@ -36,7 +48,7 @@ import { TarjetaComponent } from './components/heroes/heroe/tarjeta/tarjeta.comp
     APP_ROUTING
   ],
   //servicios
-  providers: [HeroesService],
+  providers: [HeroesService,{provide:LOCALE_ID,useValue:'es'}],//set idioma],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
